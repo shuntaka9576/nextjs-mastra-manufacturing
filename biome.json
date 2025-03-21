@@ -1,0 +1,21 @@
+{
+  "files": {
+    "ignore": ["node_modules", ".mastra", ".next", ".git", ".db"]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2
+  },
+  "organizeImports": {
+    "enabled": true
+  },
+  "linter": {
+    "rules": {
+      "correctness": {
+        "noUnusedImports": "warn",
+        "noUnusedVariables": "warn"
+      }
+    }
+  }
+}

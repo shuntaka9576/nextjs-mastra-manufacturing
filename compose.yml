@@ -1,0 +1,22 @@
+services:
+  pinecone:
+    image: ghcr.io/pinecone-io/pinecone-local:latest
+    environment: 
+      PORT: 5080
+      PINECONE_HOST: localhost
+    ports: 
+      - "5080-5090:5080-5090"
+    platform: linux/amd64
+
+  lgtm:
+    image: docker.io/grafana/otel-lgtm:0.8.1
+    ports:
+      - "3000:3000"
+      - "4317:4317"
+      - "4318:4318"
+    volumes:
+      - .db/lgtm/grafana:/data/grafana
+      - .db/lgtm/prometheus:/data/prometheus
+      - .db/lgtm/loki:/data/loki
+    environment:
+      - GF_PATHS_DATA=/data/grafana
