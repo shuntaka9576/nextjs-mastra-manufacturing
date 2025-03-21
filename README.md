@@ -1,4 +1,11 @@
+# nextjs-mastra-manufacturing
 
+## Architecture
+
+![img](./docs/architecture.drawio.png)
+![img](./docs/app.gif)
+
+## Quick Start
 ```bash
 npm install
 ```
@@ -7,6 +14,7 @@ npm install
 docker compose up -d
 ```
 
+initialize pinecone vector store
 ```bash
 # requires assuming AWS role
 npx tsx ./bin/init-vector-store.ts
